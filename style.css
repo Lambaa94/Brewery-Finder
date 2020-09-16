@@ -1,0 +1,22 @@
+#search-parameters {
+    margin:2rem;
+    align-items:center;
+    justify-content: center;
+}
+
+
+
+.media-object {
+    justify-content:center;
+    align-items:center;
+    margin-top:1rem;
+}
+
+
+label {
+    margin-right:1rem;
+}
+
+#find-breweries-button {
+    margin-top:20px;
+}
