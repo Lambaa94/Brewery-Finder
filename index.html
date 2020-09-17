@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
     <title>Brewery Finder - Locate a Brewery in Your Area</title>
 <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
@@ -74,7 +75,7 @@
 
                     <form>
                         <label>City
-                            <input class="search-criteria" type="text" placeholder="City"></input>
+                            <input class="search-criteria" type="text" placeholder="City" id="city"></input>
                         </label>
                     </form>
 
@@ -91,7 +92,7 @@
                     </label>
 
                     <label>Price
-                        <select class="search-criteria"> 
+                        <select class="search-criteria" id="price"> 
                             <option>$</option>
                             <option>$$</option>
                             <option>$$$</option>
@@ -106,11 +107,25 @@
         </div>
 
         <hr>
+        <div class="brewNames menu"></div>
 
 
-       
+
+        <hr>
+    <div id="map"></div>
+    
+    <div id="otherStuff" style="width: 50%;height:500px"></div>
+    
+</div>
 
     <!-- Compressed JavaScript for Foundation -->
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+        integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script async defer id="google" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-WOeEFR0l5fEi4fiug6nt43CVRRbqdc0&callback=initMap"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
 
 
