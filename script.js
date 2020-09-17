@@ -44,6 +44,26 @@ $(document).ready(function(){
                     method: "GET"
                 }).then(function(biz) {
                     console.log(biz)
+                    console.log(biz.image_url)
+                    //create div to display business info
+                    var infoDiv = $("<div>")
+                    // Brewery Name
+                    var name = yelp.businesses[0].name
+                    var nameP = $("<p>")
+                    nameP.text(name)
+                    infoDiv.append(nameP)
+                    $("#brewInfo").append(infoDiv)
+                    // Brewery Address
+                    var address = yelp.businesses[0].location.address1
+                    var addressP = $("<p>")
+                    addressP.text(address)
+                    infoDiv.append(address)
+                    // Brewery Picture
+                    var photo = biz.image_url
+                    var breweryImg = $("<img>")
+                    breweryImg.attr("src", photo)
+                    infoDiv.append(breweryImg)
+                    
                 })
                 
             })
