@@ -4,19 +4,43 @@
     justify-content: center;
 }
 
-
-
 .media-object {
     justify-content:center;
-    align-items:center;
+    align-items:stretch;
     margin-top:1rem;
 }
 
-
-label {
-    margin-right:1rem;
+/* welcome to brewery finder */
+#welcome-to-brewery-finder {
+    align-items:center;
 }
+
+
 
 #find-breweries-button {
-    margin-top:20px;
+    margin-top:25px;
+    border-radius: 3px;
 }
+
+
+a.clickable-navbar-link {
+    font-weight:bold;
+}
+
+a:hover{
+    background-color:rgb(199,156,16);
+    color:white;
+    font-weight:bold;
+}
+
+
+#navbar-brewery-finder {
+    font-size:1.1em;
+}
+
+
+input:focus {
+    outline-color:yellow;
+}
+
+
