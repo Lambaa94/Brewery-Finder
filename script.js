@@ -20,12 +20,14 @@ $(document).ready(function(){
             //Test brewery is just first brewery on the list in this city (temporary)
             
             for(var i = 0; i < response.length; i++){
-            var testBrewery = response[i].name;
-            $(".brewNames").append("<hr>" + "<button>" + testBrewery)
-            $("button").attr("data-name", testBrewery)
+              var testBrewery = response[i].name;
+              var newBreweryButton = $("<button>");
+              newBreweryButton.text(testBrewery);
+              newBreweryButton.attr("data-name", testBrewery);
+              $(".brewNames").append(newBreweryButton);
             
           }
-            
+          
            
             //YELP CALL BASED ON CITY VAR + TESTBREWERY VAR (TEMPORARY)
             var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + testBrewery + "&location=" + city
