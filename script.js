@@ -19,7 +19,7 @@ var lng = -75.1652
 var marker = new google.maps.Marker({
   position : { lat: lat, lng: lng},
   map : map,
-  icon:'https://cdn.vox-cdn.com/thumbor/rgnZj-wJtFBWeGIq4beR04GU-8M=/200x200/filters:format(png)/cdn.vox-cdn.com/uploads/chorus_asset/file/19700731/googlemaps.png'
+  icon:'https://img.icons8.com/office/40/000000/beer.png'
 });
 
 var infoWindow = new google.maps.InfoWindow({
@@ -35,28 +35,6 @@ marker.addListener("click", function(){
 
 
 
-
-
-
-
-
-
-
-//   var options = {
-//   center : {lat:42.3601, lng:-71.0589},
-//   zoom : 10
-
-// }
-//  map = new google.maps.Map($("map"), options)
-// // var marker = new google.maps.Marker({
-// //   position : options,
-// //   map : map
-// // })
-       
-
-// var APIKey = "AIzaSyB-WOeEFR0l5fEi4fiug6nt43CVRRbqdc0"
-
-;
 
         
         
