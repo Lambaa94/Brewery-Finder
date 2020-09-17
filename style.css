@@ -1,6 +1,11 @@
 #map {
     height: 400px;
-    width: 100%;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 150px;
+  
+    
 }
 
 html, body {
