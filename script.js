@@ -22,8 +22,8 @@ $(document).ready(function(){
             for(var i = 0; i < response.length; i++){
             var testBrewery = response[i].name;
             $(".brewNames").append("<hr>" + "<button>" + testBrewery)
-            $("button").attr("data-name", (this))
-          
+            $("button").attr("data-name", testBrewery)
+            
           }
             
            
