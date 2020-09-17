@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brewery Finder - Locate a Brewery in Your Area</title>
+    <title>Brewery Finder | Locate a Brewery in Your Area</title>
 
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
@@ -22,124 +22,92 @@
     <div class="row">
 
 
-
+        <!-- Navbar; called a "top bar" in Foundation terminology -->
         <div class="row">
-            <div class="top-bar">
-                <div class="top-bar-left">
-                    <ul class="dropdown menu" data-dropdown-menu>
-                        <li class="menu-text">Brewery Finder</li>
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li><a href="#">About</a></li>
-                    </ul>
+
+            <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+                <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+                <div class="title-bar-title">Menu</div>
+              </div>
+
+
+                <div class="top-bar" id="responsive-menu">
+                    <div class="top-bar-left">
+                        <ul class="dropdown menu" data-dropdown-menu>
+                            <li>
+                                <a href="index.html" class="clickable-navbar-link" id="navbar-brewery-finder">Brewery
+                                    Finder</a></li>
+                            <li>
+                                <a href="index.html" class="clickable-navbar-link">Home</a>
+                            </li>
+                            <li>
+                                <a href="#" class="clickable-navbar-link">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
                 </div>
-                <div class="top-bar-right">
-                    <ul class="menu">
-                        <li><input type="search" placeholder="Search"></li>
-                        <li><button type="button" class="button">Search</button></li>
-                    </ul>
-                </div>
-            </div>
         </div>
 
+
+        <!-- Image and Text ("welcome to brewery finder") -->
         <div class="row">
-            <div class="media-object">
-                <div class="media-object-section">
-                    <div class="thumbnail">
-                        <img src="Company-logo.png" alt="company logo">
+                <div class="media-object">
+                    <div class="media-object-section">
+                        <div class="thumbnail">
+                            <img src="Company-logo.png" alt="Brewery Finder logo">
+                        </div>
+                    </div>
+                    <div class="media-object-section" id="welcome-to-brewery-finder">
+                        <h4 id="welcome-header" class="text-center">Welcome to Brewery Finder || Select from the Below Search Criteria to Begin:</h4>
                     </div>
                 </div>
-                <div class="media-object-section">
-                    <h4 class="text-center">Welcome to Brewery Finder || Select from the Below Search Criteria to Begin:
-                    </h4>
+        </div>
+        <hr>
+
+
+        <!-- Search paramaters menu that allows user to select/enter terms for their search -->
+        <div class="row">
+            <div class="small-12">
+                <div class="menu" id="search-parameters">
+
+                    <form>
+                        <label>City
+                            <input class="search-criteria" type="text" placeholder="City"></input>
+                        </label>
+                    </form>
+
+                    <lable>Brewery Type
+                        <select class="search-criteria" id="brewery-type">
+                            <option value="Micro">Micro</option>
+                            <option value="Regional">Regional</option>
+                            <option value="Brewpub">Brewpub</option>
+                            <option value="Large">Large</option>
+                            <option value="Bar">Bar</option>
+                            <option value="Contract">Contract</option>
+                            <option value="Proprietor">Proprietor</option>
+                        </select>
+                    </lable>
+
+                    <label>Price
+                        <select class="search-criteria"> 
+                            <option>$</option>
+                            <option>$$</option>
+                            <option>$$$</option>
+                            <option>$$$$</option>
+                        </select>
+                    </label>
+
+                    <button type="button" id="find-breweries-button" class="button warning"><strong>Find
+                            Breweries</strong></button>
                 </div>
             </div>
-
-        </div>
-        <hr>
-
-        <div class="row">
-            <div class="menu" id="search-parameters"> 
-                <label class="search-criteria">Select State
-                    <select>
-                        <option value="apollo">Alabama</option>
-                        <option value="apollo">Alaska</option>
-                        <option value="apollo">Arizona</option>
-                        <option value="apollo">Arkansas</option>
-                        <option value="apollo">California</option>
-                        <option value="apollo">Colorado</option>
-                        <option value="apollo">Connecticut</option>
-                        <option value="apollo">Deleware</option>
-                        <option value="apollo">Florida</option>
-                        <option value="apollo">Georgia</option>
-                        <option value="apollo">Hawaii</option>
-                        <option value="apollo">Idaho</option>
-                        <option value="apollo">Illinois</option>
-                        <option value="apollo">Indiana</option>
-                        <option value="apollo">Iowa</option>
-                        <option value="apollo">Kansas</option>
-                        <option value="apollo">Kentucky</option>
-                        <option value="apollo">Louisiana</option>
-                        <option value="apollo">Maine</option>
-                        <option value="apollo">Maryland</option>
-                        <option value="apollo">Massachussets</option>
-                        <option value="apollo">Michigan</option>
-                        <option value="apollo">Minnesota</option>
-                        <option value="apollo">Mississipi</option>
-                        <option value="apollo">Missouri</option>
-                        <option value="apollo">Montana</option>
-                        <option value="apollo">Nebraska</option>
-                        <option value="apollo">Nevada</option>
-                        <option value="apollo">New Hampshire</option>
-                        <option value="apollo">New Jersey</option>
-                        <option value="apollo">New Mexico</option>
-                        <option value="apollo">New York</option>
-                        <option value="apollo">North Carolina</option>
-                        <option value="apollo">North Dakota</option>
-                        <option value="apollo">Ohio</option>
-                        <option value="apollo">Oklahoma</option>
-                        <option value="apollo">Oregon</option>
-                        <option value="apollo">Pennsylvania</option>
-                        <option value="apollo">Rhode Island</option>
-                        <option value="apollo">South Carolina</option>
-                        <option value="apollo">South Dakota</option>
-                        <option value="apollo">Tennessee</option>
-                        <option value="apollo">Texas</option>
-                        <option value="apollo">Utah</option>
-                        <option value="apollo">Vermont</option>
-                        <option value="apollo">Virginia</option>
-                        <option value="apollo">Washington</option>
-                        <option value="apollo">West Virginia</option>
-                        <option value="apollo">Wisconsin</option>
-                        <option value="apollo">Wyoming</option>
-                    </select>
-                </label>
-
-                <form>
-                    <label>City
-                        <input class="search-criteria" type="text" placeholder="City"></input>
-                    </label>
-                </form>
-
-                <label>Price
-                    <select> class="search-criteria"
-                        <option>$</option>
-                        <option>$$</option>
-                        <option>$$$</option>
-                    </select>
-                </label>
-
-                <button type="button" id="find-breweries-button" class="button warning"><strong>Find
-                        Breweries</strong></button>
-            </div>
         </div>
 
         <hr>
 
 
-    </div>
-
+       
 
     <!-- Compressed JavaScript for Foundation -->
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
