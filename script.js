@@ -1,7 +1,18 @@
 
 $(document).ready(function () {
+
+  
+  $(document).on("keyup", function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      $("#find-breweries-button").click();
+    }
+  })
+
+
   $("#find-breweries-button").on("click", function () {
     localStorage.clear()
+    $(".brewNames").empty();
     //ADD STATE TO SEARCH PARAM
     ///variables for search parameters
 
@@ -9,6 +20,8 @@ $(document).ready(function () {
     city = $("#city").val();
     console.log(city)
 
+
+   
 
     // spaceCheckFunction();
     
@@ -21,7 +34,7 @@ $(document).ready(function () {
     //   function spaceEliminator () {
     //     var str = cityString;
     //     console.log("im here");
-    //     var spacelessString = str.replaceAll(" ", "_");
+    //     var spacelessString = str.replaceAll(" ", "%");
     //     cityString.innerHTML = spacelessString;
     //     console.log(spacelessString);
     //     console.log(JSON.parse(spacelessString));
@@ -41,7 +54,6 @@ $(document).ready(function () {
 
     // **************ROBERT 
     localStorage.setItem("searched state", state);
-    localStorage.setItem("searched city", city);
 
 
 
@@ -55,7 +67,7 @@ $(document).ready(function () {
     // localStorage.setItem("searched price", price);
 
 
-    var queryURL = "https://api.openbrewerydb.org/breweries?by_state=" + state + "&by_city=" + city + "&by_type=" + breweryType
+    var queryURL = "https://api.openbrewerydb.org/breweries?by_state=" + state + "&by_type=" + breweryType + "&per_page=25"
 
     //OPEN BREWERY DB CALL
     $.ajax({
