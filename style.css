@@ -1,60 +1,106 @@
-#map {
+/*#logo {
+   border: transparent;
+}*/
+.top-bar {
+    background-color: black;
+   
+ }
+  
+ .dropdown.menu {
+    background-color: black;
+   
+ }
+  
+ body {
+    background-image: url("assets/banner-img.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+ }
+  
+ #map {
     height: 400px;
     width: 100%;
     justify-content: center;
     align-items: center;
-    
-}
-
-html, body {
+   
+ }
+  
+ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-}
-
-#search-parameters {
+ }
+  
+ #search-parameters {
     margin:2rem;
     align-items:center;
     justify-content: center;
-}
-
-.media-object {
+ }
+  
+ .media-object {
     justify-content:center;
     align-items:stretch;
     margin-top:1rem;
-}
-
-/* welcome to brewery finder */
-#welcome-to-brewery-finder {
+ }
+  
+ /* welcome to brewery finder */
+ #welcome-to-brewery-finder {
     align-items:center;
-}
-
-
-
-#find-breweries-button {
+    color: grey;
+ }
+  
+ label {
+    color: grey;
+ }
+  
+  
+  
+ #find-breweries-button {
     margin-top:25px;
     border-radius: 3px;
-}
-
-
-a.clickable-navbar-link {
+ }
+  
+  
+ a.clickable-navbar-link {
     font-weight:bold;
-}
-
-a:hover{
+ }
+  
+ a:hover{
     background-color:rgb(199,156,16);
-    color:white;
+    /*color:white;*/
     font-weight:bold;
-}
-
-
-#navbar-brewery-finder {
+ }
+  
+  
+  
+ #navbar-brewery-finder {
     font-size:1.1em;
-}
-
-
-input:focus {
+ }
+  
+  
+ input:focus {
     outline-color:yellow;
-}
+ }
+  
+  
+ #yelp-modal {
+    width: 50%;
+    height: 50%;
+    border: 10px;
+    justify-content: center;
+    text-align: center;
+    outline-color: white;
+   
+ }
+  
+ .dynamicallyCreatedButtons {
+    background-color: transparent;
+    color: black;
+ }
+  
+ .dynamicallyCreatedButtons:hover {
+    background-color: grey;
+ }
+ 
 
 
