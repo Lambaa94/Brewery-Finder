@@ -12,9 +12,10 @@
  }
   
  body {
-    background-image: url("assets/banner-img.jpeg");
+    background-image: url("assets/banner-img.jpg");
     background-size: cover;
     background-attachment: fixed;
+    font-family: 'Raleway', serif;
  }
   
  #map {
