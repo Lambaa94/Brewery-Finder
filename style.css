@@ -58,3 +58,10 @@ input:focus {
 }
 
 
+#yelp-modal {
+    width: 50%;
+    height: 50%;
+    border: 10px;
+    justify-content: center;
+    
+}
