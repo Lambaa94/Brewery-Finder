@@ -1,6 +1,7 @@
 
 $(document).ready(function () {
   $("#find-breweries-button").on("click", function () {
+    localStorage.clear()
     //ADD STATE TO SEARCH PARAM
     ///variables for search parameters
 
@@ -81,8 +82,8 @@ $(document).ready(function () {
         // array.push(testBrewery);
 
       }
-
-
+      
+      
     });
 
 
@@ -102,7 +103,7 @@ $(document).ready(function () {
 
     // ****************ROBERT (added local storage as a variable, and i got rid of the getitem method - not sure if this is necessary though)
     var localstorageBreweryName = localStorage.getItem("Brewery Name");
-
+    breweryName = localstorageBreweryName
     var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + localstorageBreweryName + "&location=" + city
 
     $.ajax({
@@ -130,6 +131,10 @@ $(document).ready(function () {
       lat = yelp.businesses[0].coordinates.latitude;
       localStorage.setItem("latitude", lat)
       localStorage.setItem("longitude", lon)
+      initMap();
+      
+      
+      
       console.log(lon)
       console.log(lat)
 
@@ -176,35 +181,19 @@ $(document).ready(function () {
     })
   })
 
-
-
-
-
 });
 
-function add(key, value) {
-  lastKey = key;                    
-  localStorage.setItem(key, value);
-}
 
-function getLast() {
-  return localStorage.getItem(lastKey);
-}
-
-
-
-var lastKey;
 
   // this is pulling the item before the most recently searched
     var lat = parseFloat(localStorage.getItem("latitude"));
     var lon = parseFloat(localStorage.getItem("longitude"));
-    var breweryName = localStorage.getItem("Brewery Name")
+    var breweryName = localStorage.getItem("Brewery Name");
   
   googleApi = "https://maps.googleapis.com/maps/api/js?key=AIzaSyB-WOeEFR0l5fEi4fiug6nt43CVRRbqdc0&callback=initMap"
 
   $("#google").attr("src", googleApi);
-  // insert brewery name
-  var breweryName = "";
+
   // insert lat and lon from API
  
   console.log(lat)
@@ -212,41 +201,46 @@ var lastKey;
 
   function initMap() {
     var options = {
-      zoom: 14,
+      zoom: 13,
       center: { lat: lat, lng: lon }
     }
     var map = new google.maps.Map(document.getElementById('map'), options)
     
-    var marker = new google.maps.Marker({
-      position: { lat: lat, lng: lon },
-      map: map,
-      icon: 'https://img.icons8.com/office/40/000000/beer.png'
-    });
 
-    var infoWindow = new google.maps.InfoWindow({
-      content: '<h1>' + breweryName + '</h1>'
-    });
+  addMarker({
+    coords:{ lat: lat, lng: lon },
+    iconImage: 'https://img.icons8.com/office/40/000000/beer.png',
+    content: '<h1>' + breweryName + '</h1>'
+  });
 
-    marker.addListener("click", function () {
-      infoWindow.open(map, marker);
-    });
-
-  }
+console.log(addMarker)
 
 
+  function addMarker(props){
+  var marker = new google.maps.Marker({
+    position: props.coords,
+    map: map,
+    icon: props.iconImage
+  });
 
-  // Robert **********  This document.ready() wraps around everything right? I put the });
+if(props.iconImage){
+  marker.setIcon(props.iconImage);
+}
+
+
+  if(props.content){
+  var infoWindow = new google.maps.InfoWindow({
+    content: props.content
+  });
+
+  marker.addListener('click', function(){
+    infoWindow.open(map, marker);
+  }); 
+
+
+}}};
+
+// Robert **********  This document.ready() wraps around everything right? I put the });
 
 
 
-
-
-
-// The Ajax call for the yelp modal
-
-// var $modal = $('#yelp-modal');
-
-//         $.ajax('/url')
-//           .done(function(resp){
-//             $modal.html(resp).foundation('open');
-//         });
