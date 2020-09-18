@@ -5,25 +5,29 @@ $(document).ready(function () {
     $(".brewNames").empty();
     //ADD STATE TO SEARCH PARAM
     ///variables for search parameters
-    city = $("#city").val();
 
+    state = $("#state").val();
+    
+    console.log(state)
+    
 
 
     // **************ROBERT 
-    localStorage.setItem("searched city", city);
+    localStorage.setItem("searched state", state);
+
 
 
 
     breweryType = $("#brewery-type").val();
-    price = $("#price").val();
+    // price = $("#price").val();
 
 
     // **************ROBERT 
     localStorage.setItem("searched brewery type", breweryType);
-    localStorage.setItem("searched price", price);
+    // localStorage.setItem("searched price", price);
 
 
-    var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + city + "&by_type=" + breweryType
+    var queryURL = "https://api.openbrewerydb.org/breweries?by_state=" + state + "&by_type=" + breweryType
 
     //OPEN BREWERY DB CALL
     $.ajax({
@@ -36,19 +40,19 @@ $(document).ready(function () {
       //Test brewery is just first brewery on the list in this city (temporary)
 
       for (var i = 0; i < response.length; i++) {
+        
+        // var array = []
+
         var testBrewery = response[i].name;
         var newBreweryButton = $("<button>");
-        var hr = $("<hr>")
         newBreweryButton.text(testBrewery);
         newBreweryButton.attr("data-name", testBrewery);
         newBreweryButton.attr("data-toggle", "yelp-modal")
         newBreweryButton.addClass("success button dynamicallyCreatedButtons");
         $(".brewNames").append(newBreweryButton)
-        // $(".brewNames").append(newBreweryButton).append(hr);
-        
-       
-        localStorage.setItem("allBreweries", JSON.stringify(testBrewery))
-      
+
+        // array.push(testBrewery);
+
       }
       
       
@@ -72,7 +76,7 @@ $(document).ready(function () {
     // ****************ROBERT (added local storage as a variable, and i got rid of the getitem method - not sure if this is necessary though)
     var localstorageBreweryName = localStorage.getItem("Brewery Name");
     breweryName = localstorageBreweryName
-    var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + localstorageBreweryName + "&location=" + city
+    var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + localstorageBreweryName + "&location=" + state
 
     $.ajax({
       url: yelpURL,
