@@ -1,13 +1,15 @@
-/*#logo {
-   border: transparent;
-}*/
+#logo {
+   border: none;
+}
 .top-bar {
     background-color: black;
+    background: none;
    
  }
   
  .dropdown.menu {
     background-color: black;
+    background: none;
    
  }
   
@@ -47,11 +49,12 @@
  /* welcome to brewery finder */
  #welcome-to-brewery-finder {
     align-items:center;
-    color: grey;
+    color: #403f3d;
+    font-family: 'Raleway', serif;
  }
   
  label {
-    color: grey;
+    color: #403f3d;
  }
   
   
@@ -64,6 +67,7 @@
   
  a.clickable-navbar-link {
     font-weight:bold;
+    color: black;
  }
   
  a:hover{
