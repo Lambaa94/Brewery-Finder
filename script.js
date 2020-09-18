@@ -1,47 +1,19 @@
 
 $(document).ready(function () {
   $("#find-breweries-button").on("click", function () {
-    localStorage.clear()
+    localStorage.clear();
+    $(".brewNames").empty();
     //ADD STATE TO SEARCH PARAM
     ///variables for search parameters
 
     state = $("#state").val();
-    city = $("#city").val();
-    console.log(city)
-
-
-    // spaceCheckFunction();
     
-    
-    // function spaceCheckFunction() {
-    // var cityString = JSON.stringify(city);
-    //   var spaceChecker = cityString.includes(" ");
-    //   console.log(spaceChecker);
-
-    //   function spaceEliminator () {
-    //     var str = cityString;
-    //     console.log("im here");
-    //     var spacelessString = str.replaceAll(" ", "_");
-    //     cityString.innerHTML = spacelessString;
-    //     console.log(spacelessString);
-    //     console.log(JSON.parse(spacelessString));
-    //     localstorage.setItem("searched city", JSON.parse(spacelessString) )
-        
-    //   }
-      
-    //   if(spaceChecker == true) {
-    //     spaceEliminator();
-    //   }
-    
-    // }
-    
-   
+    console.log(state)
     
 
 
     // **************ROBERT 
     localStorage.setItem("searched state", state);
-    localStorage.setItem("searched city", city);
 
 
 
@@ -55,7 +27,7 @@ $(document).ready(function () {
     // localStorage.setItem("searched price", price);
 
 
-    var queryURL = "https://api.openbrewerydb.org/breweries?by_state=" + state + "&by_city=" + city + "&by_type=" + breweryType
+    var queryURL = "https://api.openbrewerydb.org/breweries?by_state=" + state + "&by_type=" + breweryType
 
     //OPEN BREWERY DB CALL
     $.ajax({
@@ -104,7 +76,7 @@ $(document).ready(function () {
     // ****************ROBERT (added local storage as a variable, and i got rid of the getitem method - not sure if this is necessary though)
     var localstorageBreweryName = localStorage.getItem("Brewery Name");
     breweryName = localstorageBreweryName
-    var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + localstorageBreweryName + "&location=" + city
+    var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + localstorageBreweryName + "&location=" + state
 
     $.ajax({
       url: yelpURL,
