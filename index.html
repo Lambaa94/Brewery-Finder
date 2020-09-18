@@ -107,17 +107,23 @@
         </div>
 
         <hr>
-        <div class="brewNames"></div>
-
+        <div class="brewNames menu button-group vertical large"></div>
+        
         <hr>
-    <div id="map"></div>
-    
-    <div id="brewInfo" style="width: 50%;height:500px"></div>
-
-    
+       
 </div>
 
-    <!-- Compressed JavaScript for Foundation -->
+<div class="reveal" id="yelp-modal" data-reveal data-close-on-click="true">
+    <h1 id="brewInfo"></h1>
+    <button class="close-button" data-close aria-label="Close reveal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div id="map"></div> 
+</div>
+
+
+
+<!-- Compressed JavaScript for Foundation -->
     
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
