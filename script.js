@@ -1,7 +1,8 @@
 
 $(document).ready(function () {
   $("#find-breweries-button").on("click", function () {
-    localStorage.clear()
+    localStorage.clear();
+    $(".brewNames").empty();
     //ADD STATE TO SEARCH PARAM
     ///variables for search parameters
     city = $("#city").val();
