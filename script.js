@@ -31,7 +31,7 @@ $(document).ready(function(){
             
            
             //YELP CALL BASED ON CITY VAR + TESTBREWERY VAR (TEMPORARY)
-            var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + localStorage.getItem("Brewery Name") + "&location=" + city
+            var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + localStorage.getItem("Brewery-Name") + "&location=" + city
         
             $.ajax({
                 url: yelpURL,
@@ -94,7 +94,7 @@ $(document).ready(function(){
 $(document).on("click", "button", function (){
 
   var breweryTitle = $(this).attr("data-name");
-  localStorage.setItem("Brewery Name", breweryTitle)
+  localStorage.setItem("Brewery-Name", breweryTitle)
   console.log(breweryTitle)
 })
 
