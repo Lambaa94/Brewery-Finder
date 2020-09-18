@@ -21,7 +21,7 @@ $(document).ready(function(){
             
             for(var i = 0; i < response.length; i++){
               var testBrewery = response[i].name;
-              var newBreweryButton = $("<button>");
+              var newBreweryButton = $("<button class='button' data-open='examplemodal1'>");
               newBreweryButton.text(testBrewery);
               newBreweryButton.attr("data-name", testBrewery);
               $(".brewNames").append(newBreweryButton);
