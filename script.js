@@ -12,12 +12,19 @@ $(document).ready(function () {
 
 
   $("#find-breweries-button").on("click", function () {
-    localStorage.clear()
+    localStorage.clear();
+    $(".brewNames").empty();
     //ADD STATE TO SEARCH PARAM
     ///variables for search parameters
+
     state = $("#state").val();
+    
+    console.log(state)
+    
 
 
+    // **************ROBERT 
+    localStorage.setItem("searched state", state);
 
 
 
@@ -42,19 +49,19 @@ $(document).ready(function () {
       //Test brewery is just first brewery on the list in this city (temporary)
 
       for (var i = 0; i < response.length; i++) {
+        
+        // var array = []
+
         var testBrewery = response[i].name;
         var newBreweryButton = $("<button>");
-        var hr = $("<hr>")
         newBreweryButton.text(testBrewery);
         newBreweryButton.attr("data-name", testBrewery);
         newBreweryButton.attr("data-toggle", "yelp-modal")
         newBreweryButton.addClass("success button dynamicallyCreatedButtons");
         $(".brewNames").append(newBreweryButton)
-        // $(".brewNames").append(newBreweryButton).append(hr);
-        
-       
-        localStorage.setItem("allBreweries", JSON.stringify(testBrewery))
-      
+
+        // array.push(testBrewery);
+
       }
       
       
@@ -78,7 +85,7 @@ $(document).ready(function () {
     // ****************ROBERT (added local storage as a variable, and i got rid of the getitem method - not sure if this is necessary though)
     var localstorageBreweryName = localStorage.getItem("Brewery Name");
     breweryName = localstorageBreweryName
-    var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + localstorageBreweryName + "&location=" + city
+    var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + localstorageBreweryName + "&location=" + state
 
     $.ajax({
       url: yelpURL,
