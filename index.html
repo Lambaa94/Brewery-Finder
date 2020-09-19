@@ -5,73 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-    <title>Brewery Finder - Locate a Brewery in Your Area</title>
-<!-- favicon -->
+    <script src="https://kit.fontawesome.com/7b1f6b431b.js" crossorigin="anonymous"></script>
+
+    <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
 
     <!-- Compressed CSS for Foundation-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
         integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-
-        
+    
     <link rel="stylesheet" href="style.css">
-
+    <title>Brewery Finder - Locate a Brewery in Your Area</title>
 
 </head>
 
 <body>
-    <div class="row">
+    <main class="row">
 
 
         <!-- Navbar; called a "top bar" in Foundation terminology -->
-        <div class="row">
+        <nav class="row">
 
-            <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+            <nav class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
                 <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
                 <div class="title-bar-title">Menu</div>
-              </div>
+            </nav>
 
 
-                <div class="top-bar" id="responsive-menu">
-                    <div class="top-bar-left">
-                        <ul class="dropdown menu" data-dropdown-menu>
-                            <li>
-                                <a href="index.html" class="clickable-navbar-link" id="navbar-brewery-finder">Brewery
-                                    Finder</a></li>
-                            <li>
-                                <a href="index.html" class="clickable-navbar-link">Home</a>
-                            </li>
-                            <li>
-                                <a href="about.html" class="clickable-navbar-link">About</a>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                </div>
-        </div>
+            <nav class="top-bar" id="responsive-menu">
+                <nav class="top-bar-left">
+                    <ul class="dropdown menu" data-dropdown-menu>
+                        <li>
+                            <a href="index.html" class="clickable-navbar-link" id="navbar-brewery-finder">Brewery
+                                Finder</a></li>
+                        <li>
+                            <a href="index.html" class="clickable-navbar-link">Home</a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="clickable-navbar-link">About</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </nav>
+        </nav>
 
 
         <!-- Image and Text ("welcome to brewery finder") -->
-        <div class="row">
-                <div class="media-object">
-                    <div class="media-object-section">
-                        <div class="thumbnail">
-                            <img src="Company-logo.png" alt="Brewery Finder logo">
-                        </div>
-                    </div>
-                    <div class="media-object-section" id="welcome-to-brewery-finder">
-                        <h4 id="welcome-header" class="text-center">Welcome to Brewery Finder || Select from the Below Search Criteria to Begin:</h4>
+        <figure class="row">
+            <div class="media-object">
+                <div class="media-object-section">
+                    <div class="thumbnail">
+                        <img src="Company-logo.png" alt="Brewery Finder logo">
                     </div>
                 </div>
-        </div>
+                <div class="media-object-section" id="welcome-to-brewery-finder">
+                    <h4 id="welcome-header" class="text-center">Welcome to Brewery Finder || Select from the Below
+                        Search Criteria to Begin:</h4>
+                </div>
+            </div>
+        </figure>
         <hr>
 
 
         <!-- Search paramaters menu that allows user to select/enter terms for their search -->
-        <div class="row">
-            <div class="small-12">
-                <div class="menu" id="search-parameters">
+        <section class="row">
+            <section class="small-12">
+                <section class="menu" id="search-parameters">
 
                     <label>Select State
                         <select class="search-criteria" id="state">
@@ -127,7 +127,7 @@
                             <option value="Wyoming">Wyoming</option>
                         </select>
                     </label>
-                    
+
                     <label>Brewery Type
                         <select class="search-criteria" id="brewery-type">
                             <option value="Micro">Micro</option>
@@ -140,45 +140,47 @@
                         </select>
                     </label>
 
-                   
+
 
                     <button type="button" id="find-breweries-button" class="button warning"><strong>Find
                             Breweries</strong></button>
-                </div>
-            </div>
-        </div>
+                </section>
+            </section>
+        </section>
 
         <hr>
-        <div class="brewNames menu button-group vertical large"></div>
-        
+        <section class="brewNames menu button-group vertical large"></section>
+
         <hr>
-        
-</div>
 
-<div class="reveal" id="yelp-modal" data-reveal data-close-on-click="true">
-    <h1 id="brewInfo"></h1>
-    <button class="close-button" data-close aria-label="Close reveal" type="button">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      <div id="map"></div> 
-</div>
+    </main>
+
+    <section class="reveal" id="yelp-modal" data-reveal data-close-on-click="true">
+        <h1 id="brewInfo"></h1>
+        <button class="close-button" data-close aria-label="Close reveal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <div id="map"></div>
+    </section>
 
 
 
-<!-- Compressed JavaScript for Foundation -->
-    
+    <!-- Compressed JavaScript for Foundation -->
+
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
         integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="script.js"></script>
-    <script async defer id="google" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-WOeEFR0l5fEi4fiug6nt43CVRRbqdc0&callback=initMap"></script>
+    <script async defer id="google"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-WOeEFR0l5fEi4fiug6nt43CVRRbqdc0&callback=initMap"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+        integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
 
 
-        <script>
-            $(document).foundation();
-      </script>
+    <script>
+        $(document).foundation();
+    </script>
 
 </body>
 
