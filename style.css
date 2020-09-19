@@ -27,8 +27,8 @@
  #map {
     height: 400px;
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    justify-content: right;
+    align-items: right;
    
  }
   
@@ -108,8 +108,8 @@
   
   
  #yelp-modal {
-    width: 50%;
-    height: 50%;
+    width: 80%;
+    height: 80%;
     border: 10px;
     justify-content: center;
     text-align: center;
@@ -122,6 +122,7 @@
  .dynamicallyCreatedButtons {
     background-color: transparent;
     color: black;
+    font-weight: bolder;
  }
   
  .dynamicallyCreatedButtons:hover {

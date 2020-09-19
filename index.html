@@ -50,22 +50,22 @@
         <!-- Image and Text ("welcome to brewery finder") -->
 
         <div class="row">
-                <div class="grid-y align-middle">
-                    <div class="card align-center-middle" style="width: 800px; height: 300px;">
-                        <div class="media-object">
-                            <div class="media-object-section">
-                                <div class="thumbnail">
-                                    <img id="logo" src="assets/test-logo.png" alt="Brewery Finder logo">
-                                </div>
+            <div class="grid-y align-middle">
+                <div class="card align-center-middle" style="width: 800px; height: 300px;">
+                    <div class="media-object">
+                        <div class="media-object-section">
+                            <div class="thumbnail">
+                                <img id="logo" src="assets/test-logo.png" alt="Brewery Finder logo">
                             </div>
-                            <div class="media-object-section" id="welcome-to-brewery-finder">
-                                <h2 id="welcome-header" class="text-center">Welcome to Brewery Finder</h2>
-                                <h4 class=text-center> Select from the Below
-                                    Search Criteria to Begin: </h4>
-                            </div>
+                        </div>
+                        <div class="media-object-section" id="welcome-to-brewery-finder">
+                            <h2 id="welcome-header" class="text-center">Welcome to Brewery Finder</h2>
+                            <h4 class=text-center> Select from the Below
+                                Search Criteria to Begin: </h4>
                         </div>
                     </div>
                 </div>
+            </div>
             <br>
 
 
@@ -74,11 +74,60 @@
                 <div class="small-12">
                     <div class="menu" id="search-parameters">
 
-                        <form>
-                            <label>City
-                                <input class="search-criteria" type="text" placeholder="City" id="city"></input>
-                            </label>
-                        </form>
+                        <label>Select State
+                            <select class="search-criteria" id="state">
+                                <option value="Alabama">Alabama</option>
+                                <option value="Alaska">Alaska</option>
+                                <option value="Arizona">Arizona</option>
+                                <option value="Arkansas">Arkansas</option>
+                                <option value="California">California</option>
+                                <option value="Colorado">Colorado</option>
+                                <option value="Connecticut">Connecticut</option>
+                                <option value="Deleware">Deleware</option>
+                                <option value="Florida">Florida</option>
+                                <option value="Georgia">Georgia</option>
+                                <option value="Hawaii">Hawaii</option>
+                                <option value="Idaho">Idaho</option>
+                                <option value="Illinois">Illinois</option>
+                                <option value="Indiana">Indiana</option>
+                                <option value="Iowa">Iowa</option>
+                                <option value="Kansas">Kansas</option>
+                                <option value="Kentucky">Kentucky</option>
+                                <option value="Louisiana">Louisiana</option>
+                                <option value="Maine">Maine</option>
+                                <option value="Maryland">Maryland</option>
+                                <option value="Massachussets">Massachussets</option>
+                                <option value="Michigan">Michigan</option>
+                                <option value="Minnesota">Minnesota</option>
+                                <option value="Mississipi">Mississipi</option>
+                                <option value="Missouri">Missouri</option>
+                                <option value="Montana">Montana</option>
+                                <option value="Nebraska">Nebraska</option>
+                                <option value="Nevada">Nevada</option>
+                                <option value="New Hampshire">New Hampshire</option>
+                                <option value="New Jersey">New Jersey</option>
+                                <option value="New Mexico">New Mexico</option>
+                                <option value="New York">New York</option>
+                                <option value="North Carolina">North Carolina</option>
+                                <option value="North Dakota">North Dakota</option>
+                                <option value="Ohio">Ohio</option>
+                                <option value="Oklahoma">Oklahoma</option>
+                                <option value="Oregon">Oregon</option>
+                                <option value="Pennsylvania">Pennsylvania</option>
+                                <option value="Rhode Island">Rhode Island</option>
+                                <option value="South Carolina">South Carolina</option>
+                                <option value="South Dakota">South Dakota</option>
+                                <option value="Tennessee">Tennessee</option>
+                                <option value="Texas">Texas</option>
+                                <option value="Utah">Utah</option>
+                                <option value="Vermont">Vermont</option>
+                                <option value="Virginia">Virginia</option>
+                                <option value="Wasing">Washington</option>
+                                <option value="West Virginia">West Virginia</option>
+                                <option value="Wisconsin">Wisconsin</option>
+                                <option value="Wyoming">Wyoming</option>
+                            </select>
+                        </label>
 
                         <label>Brewery Type
                             <select class="search-criteria" id="brewery-type">
@@ -89,15 +138,6 @@
                                 <option value="Bar">Bar</option>
                                 <option value="Contract">Contract</option>
                                 <option value="Proprietor">Proprietor</option>
-                            </select>
-                        </label>
-
-                        <label>Price
-                            <select class="search-criteria" id="price">
-                                <option>$</option>
-                                <option>$$</option>
-                                <option>$$$</option>
-                                <option>$$$$</option>
                             </select>
                         </label>
 
