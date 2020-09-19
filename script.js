@@ -1,5 +1,16 @@
 
 $(document).ready(function () {
+
+
+  $(document).on("keyup", function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      $("#find-breweries-button").click();
+    }
+  })
+
+
+
   $("#find-breweries-button").on("click", function () {
     localStorage.clear();
     $(".brewNames").empty();
@@ -19,12 +30,10 @@ $(document).ready(function () {
 
 
     breweryType = $("#brewery-type").val();
-    // price = $("#price").val();
 
 
     // **************ROBERT 
     localStorage.setItem("searched brewery type", breweryType);
-    // localStorage.setItem("searched price", price);
 
 
     var queryURL = "https://api.openbrewerydb.org/breweries?by_state=" + state + "&by_type=" + breweryType
