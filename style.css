@@ -1,14 +1,18 @@
 #logo {
-   border: none;
+   border-color: black;
+}
+
+.title-bar {
+    background: none;
+    color: black;
 }
 .top-bar {
-    background-color: black;
     background: none;
    
  }
   
  .dropdown.menu {
-    background-color: black;
+
     background: none;
    
  }
@@ -33,6 +37,12 @@
     margin: 0;
     padding: 0;
  }
+
+.card {
+    background-color: black;
+    border-radius: 5px;
+
+}
   
  #search-parameters {
     margin:2rem;
@@ -49,19 +59,28 @@
  /* welcome to brewery finder */
  #welcome-to-brewery-finder {
     align-items:center;
-    color: #403f3d;
+    color: gainsboro;
     font-family: 'Raleway', serif;
  }
   
  label {
-    color: #403f3d;
+    color: black;
+    font-weight: bold;
+    padding: 5px;
  }
   
+ .search-criteria {
+     border-radius: 5px;
+     border-color: black;
+     
+ }
   
   
  #find-breweries-button {
     margin-top:25px;
     border-radius: 3px;
+    background-color: rgb(199,156,16);
+    border-color: black;
  }
   
   
@@ -95,6 +114,8 @@
     justify-content: center;
     text-align: center;
     outline-color: white;
+    background-color: black;
+    color: white;
    
  }
   
@@ -104,7 +125,8 @@
  }
   
  .dynamicallyCreatedButtons:hover {
-    background-color: grey;
+    background-color: black;
+    opacity: 50%;
  }
  
 
