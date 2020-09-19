@@ -42,7 +42,7 @@ $(document).ready(function () {
       for (var i = 0; i < response.length; i++) {
         
         // var array = []
-        var street = response[i].street
+        var street = response[i].street;
         var testBrewery = response[i].name;
         var newBreweryButton = $("<button>");
         newBreweryButton.text(testBrewery);
@@ -50,7 +50,7 @@ $(document).ready(function () {
         newBreweryButton.attr("data-toggle", "yelp-modal")
         newBreweryButton.attr("data-street", street)
         newBreweryButton.addClass("success button dynamicallyCreatedButtons");
-        $(".brewNames").append(newBreweryButton)
+        $(".brewNames").append(newBreweryButton);
 
         console.log(street)
 
@@ -69,8 +69,8 @@ $(document).ready(function () {
     var breweryTitle = $(this).attr("data-name");
     localStorage.setItem("Brewery Name", breweryTitle)
     console.log(breweryTitle)
-    var breweryStreet = $(this).attr("data-street")
-    localStorage.setItem("Brewery Street", breweryStreet)
+    var breweryStreet = $(this).attr("data-street");
+    localStorage.setItem("Brewery Street", breweryStreet);
 
 
 
@@ -81,6 +81,7 @@ $(document).ready(function () {
     var localStorageStreetName = localStorage.getItem("Brewery Street")
     var localstorageBreweryName = localStorage.getItem("Brewery Name");
     
+
     breweryName = localstorageBreweryName
     var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + localstorageBreweryName + "&location=" + state + localStorageStreetName
     console.log(yelpURL)
@@ -188,7 +189,7 @@ $(document).ready(function () {
   addMarker({
     coords:{ lat: lat, lng: lon },
     iconImage: 'https://img.icons8.com/office/40/000000/beer.png',
-    content: '<h1>' + breweryName + '</h1>'
+    content: '<h3>' + breweryName + '</h3>'
   });
 
 console.log(addMarker)
