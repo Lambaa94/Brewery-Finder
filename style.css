@@ -1,6 +1,13 @@
-#logo {
-   border-color: black;
+#map {
+    height: 400px;
+    width: 100%;
+    justify-content: right;
+    align-items: right;
+    float: right;
+    
+    
 }
+
 
 .title-bar {
     background: none;
@@ -29,7 +36,6 @@
     width: 100%;
     justify-content: right;
     align-items: right;
-   
  }
   
  html, body {
@@ -38,10 +44,18 @@
     padding: 0;
  }
 
+.logo {
+    background-color: black;
+    border-radius: 5px;
+}
+
+.thumbnail {
+    border-color: black;
+}
+
 .card {
     background-color: black;
     border-radius: 5px;
-
 }
   
  #search-parameters {
@@ -118,6 +132,10 @@
     color: white;
    
  }
+
+ #brewInfo {
+     font-family: 'Raleway', serif;
+ }
   
  .dynamicallyCreatedButtons {
     background-color: transparent;
@@ -132,3 +150,15 @@
  
 
 
+#yelp-modal {
+    width: 80%;
+    height: 80%;
+    border: 10px;
+    justify-content: center;
+    font-family: 'Raleway', serif;
+}
+
+.rating {
+    margin: 2px;
+    font-size: 18px;
+}

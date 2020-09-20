@@ -51,11 +51,11 @@
 
         <div class="row">
             <div class="grid-y align-middle">
-                <div class="card align-center-middle" style="width: 800px; height: 300px;">
+                <div class="card align-center-middle show-for-medium" style="width: 800px; height: 300px;">
                     <div class="media-object">
                         <div class="media-object-section">
                             <div class="thumbnail">
-                                <img id="logo" src="assets/test-logo.png" alt="Brewery Finder logo">
+                                <img class="logo" src="assets/test-logo.png" alt="Brewery Finder logo">
                             </div>
                         </div>
                         <div class="media-object-section" id="welcome-to-brewery-finder">
@@ -64,6 +64,10 @@
                                 Search Criteria to Begin: </h4>
                         </div>
                     </div>
+                </div>
+            </div>
+                <div class="media-object show-for-small-only">
+                            <img class="logo" src="assets/test-logo.png" alt="Brewery Finder logo">
                 </div>
             </div>
             <br>
@@ -83,7 +87,7 @@
                                 <option value="California">California</option>
                                 <option value="Colorado">Colorado</option>
                                 <option value="Connecticut">Connecticut</option>
-                                <option value="Deleware">Deleware</option>
+                                <option value="Delaware">Delaware</option>
                                 <option value="Florida">Florida</option>
                                 <option value="Georgia">Georgia</option>
                                 <option value="Hawaii">Hawaii</option>
@@ -141,29 +145,29 @@
                             </select>
                         </label>
 
+
+
                         <button type="button" id="find-breweries-button" class="button warning"><strong>Find
                                 Breweries</strong></button>
                     </div>
                 </div>
+
+                <br>
+                <div class="brewNames menu button-group vertical large"></div>
+
+                <br>
+
             </div>
-
-            <br>
-            <div class="brewNames menu button-group vertical large"></div>
-
-            <br>
 
         </div>
 
-
-        <div class="reveal" id="yelp-modal" style="width: 75%;height:650px" data-reveal data-close-on-click="true">
-            <div id="brewInfo"></div>
+        <div class="reveal" id="yelp-modal" data-reveal data-close-on-click="true">
+            <h1 id="brewInfo"></h1>
             <button class="close-button" data-close aria-label="Close reveal" type="button">
                 <span aria-hidden="true">&times;</span>
             </button>
             <div id="map"></div>
         </div>
-
-
 
 
         <!-- Compressed JavaScript for Foundation -->
@@ -174,6 +178,17 @@
         <script type="text/javascript" src="script.js"></script>
         <script async defer id="google"
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-WOeEFR0l5fEi4fiug6nt43CVRRbqdc0&callback=initMap"></script>
+
+
+        <!-- Compressed JavaScript for Foundation -->
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+            integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <script async defer id="google"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-WOeEFR0l5fEi4fiug6nt43CVRRbqdc0&callback=initMap"></script>
+
 
         <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
             integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>

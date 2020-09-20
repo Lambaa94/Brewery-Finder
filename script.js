@@ -113,6 +113,7 @@ $(document).ready(function () {
         //YELP RICH BUSINESS INFO CALL. Includes pics and more information. 
         //Biz ID can also be used for another API call for user reviews if we're interested in that.
         var yelpBizURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/" + businessID
+        
         $.ajax({
           url: yelpBizURL,
           headers: {
@@ -126,23 +127,44 @@ $(document).ready(function () {
           var infoDiv = $("<div>")
           // Brewery Name
           var name = yelp.businesses[0].name
-          var nameHead = $("<h4>")
+          var nameHead = $("<h3 class='modalLeft'>")
           nameHead.text(name)
           infoDiv.append(nameHead)
           $("#brewInfo").append(infoDiv)
           // Brewery Address
           var address = yelp.businesses[0].location.address1
-          var addressP = $("<p>")
-          addressP.text(address)
-          infoDiv.append(address)
+          var addressHead = $("<h4 class='modalLeft'>")
+          addressHead.text(address)
+          infoDiv.append(addressHead)
+          //Yelp Rating
+          var rating = biz.rating
+          var ratingImg = $("<img class='rating'>")
+          ratingImg.attr("src", "assets/" + "yelpstars/" + rating + ".png")
+          infoDiv.append(ratingImg)
+          var reviewCount = biz.review_count
+          var reviewP = $("<h4 class='rating'>")
+          reviewP.text("  " + reviewCount + " Ratings")
+          infoDiv.append(reviewP)
+          yelpSite = biz.url
+          var toYelp = $("<a>")
+          toYelp.attr("href", yelpSite)
+          toYelp.html(" on Yelp")
+          reviewP.append(toYelp)
+
           infoDiv.append("<hr>")
+
           // Brewery Picture
           var photo = biz.image_url
-          var breweryImg = $("<img>")
+          var breweryImg = $("<img id='breweryPic'>")
           breweryImg.attr("src", photo)
           infoDiv.append(breweryImg)
-          infoDiv.append("<hr>")
           $("#brewInfo").html(infoDiv);
+
+
+          
+
+
+
   
           
         
@@ -211,7 +233,7 @@ $(document).ready(function () {
   
   
   }}};
-  
-  // Robert **********  This document.ready() wraps around everything right? I put the });
+ 
+// Robert **********  This document.ready() wraps around everything right? I put the });
   
   
