@@ -127,9 +127,10 @@
     border: 10px;
     justify-content: center;
     text-align: center;
-    outline-color: white;
     background-color: black;
+    outline-color: white;
     color: white;
+    font-family: 'Raleway', serif;
    
  }
 
@@ -147,18 +148,12 @@
     background-color: black;
     opacity: 50%;
  }
- 
-
-
-#yelp-modal {
-    width: 80%;
-    height: 80%;
-    border: 10px;
-    justify-content: center;
-    font-family: 'Raleway', serif;
-}
 
 .rating {
     margin: 2px;
     font-size: 18px;
+}
+
+.gm-style-iw-d {
+   color: #C89E09;
 }
