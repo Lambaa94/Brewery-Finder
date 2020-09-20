@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/7b1f6b431b.js" crossorigin="anonymous"></script>
 
-    <title>Brewery Finder - Locate a Brewery in Your Area</title>
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
 
@@ -16,40 +16,40 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
     <link rel="stylesheet" href="style.css">
-
+    <title>Brewery Finder - Locate a Brewery in Your Area</title>
 
 </head>
 
 <body>
-    <div class="row">
+    <main class="row">
 
 
         <!-- Navbar; called a "top bar" in Foundation terminology -->
-        <div class="row">
+        <nav class="row">
 
-            <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+            <nav class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
                 <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
                 <div class="title-bar-title">Menu</div>
             </div>
 
 
-            <div class="top-bar" id="responsive-menu">
+            <nav class="top-bar" id="responsive-menu">
                 <ul class="dropdown menu" data-dropdown-menu>
                     <li>
                         <a href="index.html" class="clickable-navbar-link">Home</a>
                     </li>
                     <li>
-                        <a href="#" class="clickable-navbar-link">About</a>
+                        <a href="about.html" class="clickable-navbar-link">About</a>
                     </li>
                 </ul>
 
 
-            </div>
-        </div>
+            </nav>
+        </nav>
 
         <!-- Image and Text ("welcome to brewery finder") -->
 
-        <div class="row">
+        <main class="row">
             <div class="grid-y align-middle">
                 <div class="card align-center-middle show-for-medium" style="width: 800px; height: 300px;">
                     <div class="media-object">
@@ -159,15 +159,15 @@
 
             </div>
 
-        </div>
+        </main>
 
-        <div class="reveal" id="yelp-modal" data-reveal data-close-on-click="true">
+        <section class="reveal" id="yelp-modal" data-reveal data-close-on-click="true">
             <h1 id="brewInfo"></h1>
             <button class="close-button" data-close aria-label="Close reveal" type="button">
                 <span aria-hidden="true">&times;</span>
             </button>
             <div id="map"></div>
-        </div>
+        </section>
 
 
         <!-- Compressed JavaScript for Foundation -->
@@ -179,13 +179,7 @@
         <script async defer id="google"
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-WOeEFR0l5fEi4fiug6nt43CVRRbqdc0&callback=initMap"></script>
 
-<div class="reveal" id="yelp-modal" data-reveal data-close-on-click="true">
-    <h1 id="brewInfo"></h1>
-    <button class="close-button" data-close aria-label="Close reveal" type="button">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      <div id="map"></div> 
-</div>
+    </main>
 
         <!-- Compressed JavaScript for Foundation -->
 
