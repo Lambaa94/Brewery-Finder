@@ -23,7 +23,7 @@ $(document).ready(function () {
     
 
 
-    // **************ROBERT 
+    
     localStorage.setItem("searched state", state);
 
 
@@ -32,7 +32,6 @@ $(document).ready(function () {
     breweryType = $("#brewery-type").val();
 
 
-    // **************ROBERT 
     localStorage.setItem("searched brewery type", breweryType);
 
 
@@ -82,7 +81,7 @@ $(document).ready(function () {
 
     //YELP CALL BASED ON CITY VAR + TESTBREWERY VAR (TEMPORARY)
 
-    // ****************ROBERT (added local storage as a variable, and i got rid of the getitem method - not sure if this is necessary though)
+    //  (added local storage as a variable, and i got rid of the getitem method - not sure if this is necessary though)
     var localstorageBreweryName = localStorage.getItem("Brewery Name");
     breweryName = localstorageBreweryName
     var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + localstorageBreweryName + "&location=" + state
@@ -221,7 +220,6 @@ if(props.iconImage){
 
 }}};
 
-// Robert **********  This document.ready() wraps around everything right? I put the });
 
 
 
