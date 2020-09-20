@@ -26,7 +26,7 @@ $(document).ready(function () {
       // localStorage.setItem("searched price", price);
   
   
-      var queryURL = "https://api.openbrewerydb.org/breweries?by_state=" + state + "&by_type=" + breweryType
+      var queryURL = "https://api.openbrewerydb.org/breweries?by_state=" + state + "&by_type=" + breweryType + "&per_page=50"
   
       //OPEN BREWERY DB CALL
       $.ajax({
@@ -148,6 +148,7 @@ $(document).ready(function () {
           yelpSite = biz.url
           var toYelp = $("<a>")
           toYelp.attr("href", yelpSite)
+          toYelp.attr("target",'_blank')
           toYelp.html(" on Yelp")
           reviewP.append(toYelp)
 
