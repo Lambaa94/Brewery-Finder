@@ -3,60 +3,151 @@
     width: 100%;
     justify-content: right;
     align-items: right;
+    float: right;
     
     
 }
 
-html, body {
+
+.title-bar {
+    background: none;
+    color: black;
+}
+.top-bar {
+    background: none;
+   
+ }
+  
+ .dropdown.menu {
+
+    background: none;
+   
+ }
+  
+ body {
+    background-image: url("assets/banner-img.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Raleway', serif;
+ }
+  
+ #map {
+    height: 400px;
+    width: 100%;
+    justify-content: right;
+    align-items: right;
+ }
+  
+ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+ }
+
+.logo {
+    background-color: black;
+    border-radius: 5px;
 }
 
-#search-parameters {
+.thumbnail {
+    border-color: black;
+}
+
+.card {
+    background-color: black;
+    border-radius: 5px;
+}
+  
+ #search-parameters {
     margin:2rem;
     align-items:center;
     justify-content: center;
-}
-
-.media-object {
+ }
+  
+ .media-object {
     justify-content:center;
     align-items:stretch;
     margin-top:1rem;
-}
-
-/* welcome to brewery finder */
-#welcome-to-brewery-finder {
+ }
+  
+ /* welcome to brewery finder */
+ #welcome-to-brewery-finder {
     align-items:center;
-}
-
-
-
-#find-breweries-button {
+    color: gainsboro;
+    font-family: 'Raleway', serif;
+ }
+  
+ label {
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+ }
+  
+ .search-criteria {
+     border-radius: 5px;
+     border-color: black;
+     
+ }
+  
+  
+ #find-breweries-button {
     margin-top:25px;
     border-radius: 3px;
-}
-
-
-a.clickable-navbar-link {
+    background-color: rgb(199,156,16);
+    border-color: black;
+ }
+  
+  
+ a.clickable-navbar-link {
     font-weight:bold;
-}
-
-a:hover{
+    color: black;
+ }
+  
+ a:hover{
     background-color:rgb(199,156,16);
-    color:white;
+    /*color:white;*/
     font-weight:bold;
-}
-
-
-#navbar-brewery-finder {
+ }
+  
+  
+  
+ #navbar-brewery-finder {
     font-size:1.1em;
-}
-
-
-input:focus {
+ }
+  
+  
+ input:focus {
     outline-color:yellow;
-}
+ }
+  
+  
+ #yelp-modal {
+    width: 80%;
+    height: 80%;
+    border: 10px;
+    justify-content: center;
+    text-align: center;
+    outline-color: white;
+    background-color: black;
+    color: white;
+   
+ }
+
+ #brewInfo {
+     font-family: 'Raleway', serif;
+ }
+  
+ .dynamicallyCreatedButtons {
+    background-color: transparent;
+    color: black;
+    font-weight: bolder;
+ }
+  
+ .dynamicallyCreatedButtons:hover {
+    background-color: black;
+    opacity: 50%;
+ }
+ 
 
 
 #yelp-modal {
@@ -64,6 +155,7 @@ input:focus {
     height: 80%;
     border: 10px;
     justify-content: center;
+<<<<<<< HEAD
     
 }
 
@@ -128,3 +220,12 @@ input:focus {
 	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
 	background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
 }
+=======
+    font-family: 'Raleway', serif;
+}
+
+.rating {
+    margin: 2px;
+    font-size: 18px;
+}
+>>>>>>> e921f7524f25835b09cb0d5ceb15dd73af63c047
