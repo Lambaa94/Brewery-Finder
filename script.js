@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-
+// To search with enter key
   $(document).on("keyup", function (event) {
     if (event.keyCode === 13) {
       event.preventDefault();
@@ -9,23 +9,17 @@ $(document).ready(function () {
   });
 
 
-
+// To start the search for breweries
   $("#find-breweries-button").on("click", function () {
     localStorage.clear();
     $(".brewNames").empty();
-    //ADD STATE TO SEARCH PARAM
-    ///variables for search parameters
-
+    
     state = $("#state").val();
 
     console.log(state)
 
 
-
-
     localStorage.setItem("searched state", state);
-
-
 
 
     breweryType = $("#brewery-type").val();
@@ -34,7 +28,7 @@ $(document).ready(function () {
     localStorage.setItem("searched brewery type", breweryType);
 
 
-    var queryURL = "https://api.openbrewerydb.org/breweries?by_state=" + state + "&by_type=" + breweryType
+    var queryURL = "https://api.openbrewerydb.org/breweries?by_state=" + state + "&by_type=" + breweryType + "&per_page=50"
 
     //OPEN BREWERY DB CALL
     $.ajax({
@@ -44,79 +38,26 @@ $(document).ready(function () {
 
       console.log(response)
 
-      //Test brewery is just first brewery on the list in this city (temporary)
 
       for (var i = 0; i < response.length; i++) {
 
-        // var array = []
 
         var testBrewery = response[i].name;
         var newBreweryButton = $("<button>");
         newBreweryButton.text(testBrewery);
         newBreweryButton.attr("data-name", testBrewery);
         newBreweryButton.attr("data-toggle", "yelp-modal")
-        newBreweryButton.addClass("success button dynamicallyCreatedButtons");
+        newBreweryButton.addClass("dynamicallyCreatedButtons button");
         $(".brewNames").append(newBreweryButton)
 
-        // array.push(testBrewery);
 
       }
-
-      console.log(state)
-
-
-
-      // **************ROBERT 
-      localStorage.setItem("searched state", state);
-
-
-
-
-      breweryType = $("#brewery-type").val();
-      // price = $("#price").val();
-
-
-      // **************ROBERT 
-      localStorage.setItem("searched brewery type", breweryType);
-      // localStorage.setItem("searched price", price);
-
-
-      var queryURL = "https://api.openbrewerydb.org/breweries?by_state=" + state + "&by_type=" + breweryType + "&per_page=50"
-
-      //OPEN BREWERY DB CALL
-      $.ajax({
-        url: queryURL,
-        method: "GET"
-      }).then(function (response) {
-
-        console.log(response)
-
-        //Test brewery is just first brewery on the list in this city (temporary)
-
-        for (var i = 0; i < response.length; i++) {
-
-          // var array = []
-
-          var testBrewery = response[i].name;
-          var newBreweryButton = $("<button>");
-          newBreweryButton.text(testBrewery);
-          newBreweryButton.attr("data-name", testBrewery);
-          newBreweryButton.attr("data-toggle", "yelp-modal")
-          newBreweryButton.addClass("button dynamicallyCreatedButtons");
-          $(".brewNames").append(newBreweryButton)
-
-          // array.push(testBrewery);
-
-        }
 
 
       });
 
 
     });
-
-
-  });
 
 
 
@@ -128,9 +69,7 @@ $(document).ready(function () {
 
 
 
-    //YELP CALL BASED ON CITY VAR + TESTBREWERY VAR (TEMPORARY)
-
-    //  (added local storage as a variable, and i got rid of the getitem method - not sure if this is necessary though)
+    // Yelp call based on name and state
     var localstorageBreweryName = localStorage.getItem("Brewery Name");
     breweryName = localstorageBreweryName
     var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + localstorageBreweryName + "&location=" + state
@@ -142,20 +81,18 @@ $(document).ready(function () {
       },
       method: "GET"
     }).then(function (yelp) {
+      // Yelp Information in Console
       console.log(yelp);
       console.log(yelp.businesses[0].name)
-
       console.log(yelp.businesses[0]);
-
       console.log(yelp.businesses[0].rating)
       console.log(yelp.businesses[0].location.address1)
-      var businessID = yelp.businesses[0].id
       console.log(businessID)
+      
+      var businessID = yelp.businesses[0].id
+      
 
-
-      // **************Robert 
-      // order was yelp[0].businesses.coordinates.longitude; I changed it to yelp.businesses[0].coordinates.longitude
-      // order was yelp[0].businesses.coordinates.latitude; I changed it to yelp.businesses[0].coordinates.latitude
+      // Lat and Lon for google maps
       lon = yelp.businesses[0].coordinates.longitude;
       lat = yelp.businesses[0].coordinates.latitude;
       localStorage.setItem("latitude", lat)
@@ -163,49 +100,8 @@ $(document).ready(function () {
       initMap();
 
 
-
-      console.log(lon)
-      console.log(lat)
-
-
-      //YELP RICH BUSINESS INFO CALL. Includes pics and more information. 
-      //Biz ID can also be used for another API call for user reviews if we're interested in that.
-      var yelpBizURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/" + businessID
-      $.ajax({
-        url: yelpURL,
-        headers: {
-          'Authorization': 'Bearer r-ru9f0en8RW39PeL2KLuaZ1wwUgo6nm3cHomQ9RbfzCM63ocbL6mrc2C3Culn8SmlqtM5w65eUmULYxoGBHwoE0ibv-e2E-tNx0zE7kbiF01t8IjhfP7l7ocZVhX3Yx',
-        },
-        method: "GET"
-      }).then(function (yelp) {
-        console.log(yelp);
-        console.log(yelp.businesses[0].name)
-
-        console.log(yelp.businesses[0]);
-
-        console.log(yelp.businesses[0].rating)
-        console.log(yelp.businesses[0].location.address1)
-        var businessID = yelp.businesses[0].id
-        console.log(businessID)
-
-
-        // **************Robert 
-        // order was yelp[0].businesses.coordinates.longitude; I changed it to yelp.businesses[0].coordinates.longitude
-        // order was yelp[0].businesses.coordinates.latitude; I changed it to yelp.businesses[0].coordinates.latitude
-        lon = yelp.businesses[0].coordinates.longitude;
-        lat = yelp.businesses[0].coordinates.latitude;
-        localStorage.setItem("latitude", lat)
-        localStorage.setItem("longitude", lon)
-        initMap();
-
-
-
-        console.log(lon)
-        console.log(lat)
-
-
         //YELP RICH BUSINESS INFO CALL. Includes pics and more information. 
-        //Biz ID can also be used for another API call for user reviews if we're interested in that.
+        
         var yelpBizURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/" + businessID
 
         $.ajax({
@@ -254,26 +150,12 @@ $(document).ready(function () {
           breweryImg.attr("src", photo)
           infoDiv.append(breweryImg)
           $("#brewInfo").html(infoDiv);
-
-
-
-
-
-
-
-
-
-
-
-        })
-
-      })
-    })
-
-  });
-
+        
+        });
+      });
+    });
 });
-  
+  // Getting lat and lon from yelp call
 var lat = parseFloat(localStorage.getItem("latitude"));
 var lon = parseFloat(localStorage.getItem("longitude"));
 var breweryName = localStorage.getItem("Brewery Name");
@@ -282,11 +164,7 @@ googleApi = "https://maps.googleapis.com/maps/api/js?key=AIzaSyB-WOeEFR0l5fEi4fi
 
 $("#google").attr("src", googleApi);
 
-// insert lat and lon from API
-
-console.log(lat)
-console.log(lon)
-
+// Initiate google maps
 function initMap() {
   var options = {
     zoom: 13,
