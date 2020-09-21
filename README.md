@@ -32,8 +32,6 @@ One of the major challenges we faced was populating the Google map with all sear
 
 ## License
 
-MIT License
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Copyright (c) 2020 James Lamb
