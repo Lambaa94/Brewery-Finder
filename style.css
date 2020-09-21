@@ -143,7 +143,12 @@
     color: black;
     font-weight: bolder;
  }
-  
+ .success .button {
+   background-color: transparent;
+   color: black;
+   font-weight: bolder;
+ }
+
  .dynamicallyCreatedButtons:hover {
     background-color: black;
     opacity: 50%;
