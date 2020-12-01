@@ -35,12 +35,12 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
-
+if(response.length >= 1){
       console.log(response)
 
 
-      for (var i = 0; i < response.length; i++) {
 
+        for (var i = 0; i < response.length; i++) {
 
         var testBrewery = response[i].name;
         var newBreweryButton = $("<button>");
@@ -49,10 +49,15 @@ $(document).ready(function () {
         newBreweryButton.attr("data-toggle", "yelp-modal")
         newBreweryButton.addClass("dynamicallyCreatedButtons button");
         $(".brewNames").append(newBreweryButton)
-
-
-      }
-
+      } 
+    } else {
+      var noResult = "No Search Results Found";
+      var noResultSpan = $("<span>");
+      var imageTag = $("<img>");
+      noResultSpan.text(noResult);
+      noResultSpan.addClass("dynamicallyCreatedButtons button")
+      $(".brewNames").append(noResultSpan)
+    }
 
       });
 

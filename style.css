@@ -96,11 +96,14 @@
     background-color: rgb(199,156,16);
     border-color: black;
  }
+
+ 
   
   
  a.clickable-navbar-link {
     font-weight:bold;
     color: black;
+    
  }
   
  a:hover{
@@ -139,9 +142,19 @@
  }
   
  .dynamicallyCreatedButtons {
-    background-color: transparent;
+    background-color: rgba(211, 211, 211, 0.803);
     color: black;
     font-weight: bolder;
+    width: 450px;
+    text-align: center;
+    display: flex;
+    height: auto;
+    position: relative;
+    top: 50%;
+    left: 36%;
+    align-items: center;
+    
+    
  }
  .success .button {
    background-color: transparent;
@@ -151,7 +164,7 @@
 
  .dynamicallyCreatedButtons:hover {
     background-color: black;
-    opacity: 50%;
+    opacity: 80%;
  }
 
 .rating {
