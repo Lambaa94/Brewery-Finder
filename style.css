@@ -8,6 +8,10 @@
     
 }
 
+.searchHeaders {
+   background-color: rgba(211, 211, 211, 0.771);
+   border-radius: 10px;
+}
 
 .title-bar {
     background: none;
@@ -151,8 +155,9 @@
     height: auto;
     position: relative;
     top: 50%;
-    left: 36%;
+    left: 35%;
     align-items: center;
+    border-radius: 10px;
     
     
  }
