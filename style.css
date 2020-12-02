@@ -145,14 +145,22 @@
      font-family: 'Raleway', serif;
  }
   
+ .brewNames {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+ }
  .dynamicallyCreatedButtons {
     background-color: rgba(211, 211, 211, 0.803);
     color: black;
     font-weight: bolder;
-    width: 100%;
+    width: 450px;
     text-align: center;
-    display: flex;
+    top: auto;
+    left: auto;
+    right: auto;
     height: auto;
+    justify-content: center;
     
     align-items: center;
     border-radius: 10px;
